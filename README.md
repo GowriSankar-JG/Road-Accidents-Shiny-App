@@ -15,7 +15,7 @@ packagesToInstall <- packagesRequired[!(packagesRequired %in%
 if(length(packagesToInstall)) install.packages(packagesToInstall)
 
 ## Run app from Github repo
-shiny::runGitHub('asheshwor/crashsa')
+shiny::runGitHub('GowriSankar-JG/Road-Accidents-Shiny-App')
 ```
 
 ## Screenshots
@@ -34,5 +34,5 @@ Bounding box for suburbs extracted from https://data.sa.gov.au/data/dataset/subu
 
 ## To-do
 
-* statistics of data being displayed
-* filter by type of incidents
+* Statistics of Data has being displayed
+* Filter by time of Accident/Incidents 
