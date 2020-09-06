@@ -23,7 +23,7 @@ shiny::runGitHub('GowriSankar-JG/Road-Accidents-Shiny-App')
 ![App Screenshot 1](images/preview_1.png)
 <small>Preview 1 of Shiny App</small>
 
-![App Screenshot 2](images/preview_2.png)
+![App Screenshot 2](images/preview_4.png)
 <small>Preview 2 of Shiny App</small>
 
 ## Data source
