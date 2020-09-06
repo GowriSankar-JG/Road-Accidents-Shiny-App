@@ -1,0 +1,240 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head id="Head1"><meta charset="utf-8" /><title>
+	Location Metadata System - Location SA - Public
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <script src="~/Scripts/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/lms.js" type="text/javascript"></script>
+        <script src="~/Scripts/moment.min.js" type="text/javascript"></script>
+
+
+        <link href="../Content/bootstrap.css" rel="stylesheet" type="text/css" /><link href="../Content/bootstrap-theme.min.css" rel="stylesheet" type="text/css" /><link href="../Content/lms.css" rel="stylesheet" type="text/css" />
+    
+
+        <!--[if lt IE 9]>  
+        <script src="~/Scripts/html5shiv.js"></script>
+        <script src="~/Scripts/respond.min.js"></script>
+        <![endif]-->
+
+       
+</head>
+
+    <body>
+        <form method="post" action="ReportMetadata.aspx" id="frmLMS" role="form">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTQ1OTk5NjE1D2QWAmYPZBYCAgMPZBYEZg8PFgIeC05hdmlnYXRlVXJsBR5odHRwOi8vd3d3LmxvY2F0aW9uLnNhLmdvdi5hdS9kFgJmDw8WBB4ISW1hZ2VVcmwFJ34vSW1hZ2VzL2xvY2F0aW9uIHNhIDIgY29sb3VyX3NtYWxsLnBuZx4NQWx0ZXJuYXRlVGV4dAULTG9jYXRpb24gU0FkZAIBD2QWCAIBDw8WAh4EVGV4dAUWU3VidXJicyBhbmQgTG9jYWxpdGllc2RkAgMPPCsAEQEBEBYAFgAWAGQCBQ8PFgIeB1Zpc2libGVnZBYOAgEPPCsACgEADxYEHgtfIURhdGFCb3VuZGceC18hSXRlbUNvdW50AgFkFgJmD2QWBmYPDxYCHwRoZGQCAQ9kFgJmD2QWAmYPFQMDNzU0FlN1YnVyYnMgYW5kIExvY2FsaXRpZXNqRGF0YSBBdXRob3JpdHk6IERlcGFydG1lbnQgb2YgUGxhbm5pbmcsIFRyYW5zcG9ydCBhbmQgSW5mcmFzdHJ1Y3R1cmU8QlIgLz5EYXRhIFByb3ZpZGVyOiBMb2NhdGlvbiBTQTxCUiAvPmQCAg8PFgIfBGhkZAIDDzwrAAoBAA8WBB8FZx8GAgFkFgJmD2QWBmYPDxYCHwRoZGQCAQ9kFgJmD2QWAmYPFQLfA1N1YnVyYnMgYW5kIExvY2FsaXRpZXMgKG9yIFJ1cmFsIHN1YnVyYnMpIGFyZSBkZWZpbmVkIGFyZWFzIG9mIHRoZSBTdGF0ZSBlc3RhYmxpc2hlZCBmb3IgYWRkcmVzc2luZyBwdXJwb3Nlcy4gVGhlIGJhc2UgZGF0YSB1c2VkIGZvciB0aGUgY2FwdHVyZSBpcyB0aGUgY2FkYXN0cmUuDQpUaGUgU3VidXJicyBsYXllciBpcyBhIGRhdGEgc2V0IHRoYXQgcmVmbGVjdHMgdGhlIG9mZmljaWFsIGJvdW5kYXJpZXMgb2YgYWRkcmVzc2FibGUgbG9jYWxpdGllcyBpbiBTb3V0aCBBdXN0cmFsaWEgYXMgZGVmaW5lZCBieSB0aGUgR2VvZ3JhcGhpY2FsIE5hbWVzIEFjdCwgMTk5MS4gIFRoZSBwb2x5Z29ucyBhcmUgYmFzZWQgb24gdGhlIGV4aXN0aW5nIGNhZGFzdHJhbCwgdG9wb2dyYXBoaWMgb3Igcm9hZCBjZW50ZXJsaW5lIGRhdGEgdGhhdCBkZWZpbmVzIHRoZSB1bmRlcmx5aW5nIGZlYXR1cmVzIHRoYXQgYm91bmRhcmllcyBmb2xsb3cuDQoNCg0KP1VzZWQgdG8gc3BhdGlhbGx5IGRlZmluZSBnYXpldHRlZCBTdWJ1cmIgLyBMb2NhbGl0eSBib3VuZGFyaWVzLmQCAg8PFgIfBGhkZAIFDzwrAAoBAA8WBB8FZx8GAgFkFgJmD2QWBmYPDxYCHwRoZGQCAQ9kFgJmD2QWAmYPFQPOAVRoZSBTdWJ1cmIgQm91bmRhcmllcyBpbiB0aGUgdXJiYW4gYW5kIHJ1cmFsIGFyZWFzIGFyZSB1cGRhdGVkIHdoZW4gcmVxdWlyZWQgdGhyb3VnaCBub3RpZmljYXRpb24gaW4gdGhlIEdvdmVybm1lbnQgR2F6ZXR0ZSBvciBzcGF0aWFsIGltcHJvdmVtZW50IG9mIHRoZSBjYWRhc3RyZS4gVGhlIGNhcHR1cmluZyBzdGFydGVkIDE5OTAgYW5kIGlzIG9uZ29pbmcue1RoZSBTdWJ1cmIgYm91bmRhcnkgZGF0YXNldCBpcyBjdXJyZW50bHkgMTAwJSBjb21wbGV0ZSBmb3IgdGhlIHN0YXRlIGFuZCBjb21wbGllcyB3aXRoIGdvdmVybm1lbnQgY2xhc3NpZmljYXRpb24gc3RhbmRhcmRzLs0CU3VidXJiIEJvdW5kYXJpZXMgYXJlIGFjcXVpcmVkIGJ5IGRpZ2l0aXNpbmcgdXNpbmcgdGhlIGNhZGFzdHJhbCBib3VuZGFyaWVzIGFzIGEgcmVmZXJlbmNlLiBDb25zZXF1ZW50bHksIHRoZSBwb3NpdGlvbmFsIGFjY3VyYWN5IG9mIHRoZSBTdWJ1cmIgQm91bmRhcmllcyBhcmUgZGVwZW5kZW50IHVwb24gdGhlIHBvc2l0aW9uYWwgYWNjdXJhY3kgb2YgdGhlIGNhZGFzdHJlLiBJbiBjZXJ0YWluIGFyZWFzIHRoZSBwb3NpdGlvbmFsIGFjY3VyYWN5IG9mIHRoZSBjYWRhc3RyZSBoYXMgYmVlbiBpbXByb3ZlZCBmcm9tIGdyYXBoaWNhbCBhY2N1cmFjeSB0byBzdXJ2ZXktYWNjdXJhY3kuZAICDw8WAh8EaGRkAgcPPCsACgEADxYEHwVnHwYCAWQWAmYPZBYGZg8PFgIfBGhkZAIBD2QWAmYPZBYCZg8VBQ9Tb3V0aCBBdXN0cmFsaWEDMTI4Ay0zOAMxNDEDLTI2ZAICDw8WAh8EaGRkAgkPPCsACgEADxYEHwVnHwYCAWQWAmYPZBYGZg8PFgIfBGhkZAIBD2QWAmYPZBYEZg8VBAswMS1KQU4tMTk5MAdDVVJSRU5UC0FzIHJlcXVpcmVk8QFBbHRlcmVkIGFzIGEgcmVzdWx0IG9mIGNoYW5nZXMgdG8gdGhlIHVuZGVybHlpbmcgY2FkYXN0cmUsIHJvYWQgY2VudHJlbGluZSBvciB0b3BvZ3JhcGhpY2FsIGRhdGEuDQpBbHRlcmVkIGFzIGEgcmVzdWx0IG9mIHRoZSBnYXpldHRlIG5vdGljZSB0aGF0IGNyZWF0ZXMgbmV3IHN1YnVyYnMgLyBsb2NhbGl0aWVzIG9yIGFsdGVyZWQgdGhlIGJvdW5kYXJpZXMgb2YgZXN0YWJsaXNoZWQgc3VidXJicyAvIGxvY2FsaXRpZXMuZAICDxUC5QFEaWdpdGFsIGRhdGEgaXMgc3VwcGxpZWQgdG8gY2xpZW50cyBvbiByZXF1ZXN0IHN1YmplY3QgdG8gdGhlIGNvbmRpdGlvbnMgZGVmaW5lZCBpbiBhc3NvY2lhdGVkIGRhdGEgdXNlIGFncmVlbWVudHMuIERpZ2l0YWwgZGF0YSBpcyBwcm92aWRlZCBmb3Igbm9uLWNvbW1lcmNpYWwgdXNlIGF0IGNvc3Qgb2YgdHJhbnNmZXIgKGkuZS4gdG8gU3RhdGUgYW5kIExvY2FsIEdvdmVybm1lbnQgY2xpZW50cykuFkNDIEJZICAgIChBdHRyaWJ1dGlvbilkAgIPDxYCHwRoZGQCDQ88KwARAgAPFgQfBWcfBgIDZAEQFgAWABYAFgJmD2QWCAIBD2QWCmYPDxYCHwMFF1BvbHlnb24gQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUGU1VCVVJCZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUJQ2hhcmFjdGVyZGQCBA8PFgIfAwUOTmFtZSBvZiBTdWJ1cmJkZAICD2QWCmYPDxYCHwMFF1BvbHlnb24gQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUKU1VCVVJCX05VTWRkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFB0ludGVnZXJkZAIEDw8WAh8DBSFTdWJ1cmIgZGVmaW5lZCBhcyBhIHVuaXF1ZSBudW1iZXJkZAIDD2QWCmYPDxYCHwMFF1BvbHlnb24gQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUIUE9TVENPREVkZAICDw8WAh8DBQYmbmJzcDtkZAIDDw8WAh8DBQZCaW5hcnlkZAIEDw8WAh8DBSZQb3N0Y29kZSBhcyBhc3NpZ25lZCBieSBBdXN0cmFsaWEgUG9zdGRkAgQPDxYCHwRoZGQCDw88KwAKAQAPFgQfBWcfBgIBZBYCZg9kFgZmDw8WAh8EaGRkAgEPZBYCZg9kFgJmDxUFR0RlcGFydG1lbnQgb2YgUGxhbm5pbmcsIFRyYW5zcG9ydCBhbmQgSW5mcmFzdHJ1Y3R1cmU8QlI+TGFuZCBCb3VuZGFyaWVzFzEwMSBHcmVuZmVsbCBTdHJlZXQ8QlI+CEFERUxBSURFBSA1MDAwGGxzZ3NwYXRpYWxkYXRhQHNhLmdvdi5hdWQCAg8PFgIfBGhkZAIHDw8WAh8EaGQWGgIBDzwrAAoAZAIDDzwrAAoAZAIFDzwrAAoAZAIHDzwrAAoAZAIJDzwrAAoAZAILDzwrAAoAZAIPDzwrABEBARAWABYAFgBkAhMPPCsAEQEBEBYAFgAWAGQCFQ88KwAKAGQCFw88KwAKAGQCGQ88KwAKAGQCHQ88KwARAQEQFgAWABYAZAIfDzwrAAoAZBgVBR9jdGwwMCRNYWluQ29udGVudCRndkRhdGFzZXRMaXN0D2dkBSBjdGwwMCRNYWluQ29udGVudCRmdkRlc2NyaXB0aW9uMg9nZAUcY3RsMDAkTWFpbkNvbnRlbnQkZnZDaXRhdGlvbg8UKwAHZGRkZGQWAAIBZAUgY3RsMDAkTWFpbkNvbnRlbnQkZnZEYXRhUHJvdmlkZXIPZ2QFG2N0bDAwJE1haW5Db250ZW50JGZ2UXVhbGl0eQ8UKwAHZGRkZGQWAAIBZAUbY3RsMDAkTWFpbkNvbnRlbnQkZ3ZEYXROb3RlD2dkBR1jdGwwMCRNYWluQ29udGVudCRmdkdlb0V4dGVudA8UKwAHZGRkZGQWAAIBZAUeY3RsMDAkTWFpbkNvbnRlbnQkZ3ZBdHRyaWJ1dGVzDzwrAAwBCAIBZAUlY3RsMDAkTWFpbkNvbnRlbnQkZnZTZWN1cml0eUxpY2Vuc2luZw9nZAUaY3RsMDAkTWFpbkNvbnRlbnQkZnZFeHRlbnQPZ2QFGmN0bDAwJE1haW5Db250ZW50JGd2VGFibGVzD2dkBR9jdGwwMCRNYWluQ29udGVudCRmdkRlc2NyaXB0aW9uDxQrAAdkZGRkZBYAAgFkBRtjdGwwMCRNYWluQ29udGVudCRmdkRhdGFzZXQPZ2QFGmN0bDAwJE1haW5Db250ZW50JGZ2U3RhdHVzD2dkBSFjdGwwMCRNYWluQ29udGVudCRmdkRhdGFBdXRob3JpdHkPZ2QFGmN0bDAwJE1haW5Db250ZW50JGd2RmllbGRzD2dkBRtjdGwwMCRNYWluQ29udGVudCRmdkNvbnRhY3QPFCsAB2RkZGRkFgACAWQFIWN0bDAwJE1haW5Db250ZW50JGZ2RGF0YXNldFN0YXR1cw8UKwAHZGRkZGQWAAIBZAUkY3RsMDAkTWFpbkNvbnRlbnQkZnZSZWxhdGVkUHJvZHVjdHMyD2dkBSZjdGwwMCRNYWluQ29udGVudCRmdkpvaW50RGF0YUF1dGhvcml0eQ9nZAUjY3RsMDAkTWFpbkNvbnRlbnQkZnZSZWxhdGVkUHJvZHVjdHMPZ2T2x1SLxRv8yH36TfAq7y/ZgpccuQ==" />
+</div>
+
+            <header>
+                <div class="container">
+                    
+                    <div class="row">
+                        <div id="dpti-lms-head-container" class="small col-sm-12">
+                            <div id="logo">
+                                <a id="linkLogoURL" href="http://www.location.sa.gov.au/"><img id="imgReportLogo" src="../Images/location%20sa%202%20colour_small.png" alt="Location SA" /></a>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">        
+               
+
+    <h3><span id="MainContent_lblDatasetName">Suburbs and Localities</span></h3>
+
+    <div>
+
+</div>
+
+    <div id="MainContent_pnlPublic">
+	
+
+        <table cellspacing="0" id="MainContent_fvCitation" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+
+                <table>
+                    <tr>
+                        <td class="columnlabel">Dataset Number</td><td class="datatext">754</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Dataset Title</td><td class="datatext">Suburbs and Localities</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Custodian</td><td class="datatext">Data Authority: Department of Planning, Transport and Infrastructure<BR />Data Provider: Location SA<BR /></td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+
+
+        <table cellspacing="0" id="MainContent_fvDescription" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Description</h4>
+                <table> 
+                    <tr>
+                        <td class="columnlabel">Description</td><td class="datatext">Suburbs and Localities (or Rural suburbs) are defined areas of the State established for addressing purposes. The base data used for the capture is the cadastre.
+The Suburbs layer is a data set that reflects the official boundaries of addressable localities in South Australia as defined by the Geographical Names Act, 1991.  The polygons are based on the existing cadastral, topographic or road centerline data that defines the underlying features that boundaries follow.
+
+
+</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Usage</td><td class="datatext">Used to spatially define gazetted Suburb / Locality boundaries.</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+        <table cellspacing="0" id="MainContent_fvQuality" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Data Quality</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Lineage</td><td class="datatext">The Suburb Boundaries in the urban and rural areas are updated when required through notification in the Government Gazette or spatial improvement of the cadastre. The capturing started 1990 and is ongoing.</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Completeness</td><td class="datatext">The Suburb boundary dataset is currently 100% complete for the state and complies with government classification standards.</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Positional Accuracy</td><td class="datatext">Suburb Boundaries are acquired by digitising using the cadastral boundaries as a reference. Consequently, the positional accuracy of the Suburb Boundaries are dependent upon the positional accuracy of the cadastre. In certain areas the positional accuracy of the cadastre has been improved from graphical accuracy to survey-accuracy.</td>
+                    </tr>
+
+                </table>
+            </td>
+		</tr>
+	</table>
+
+        <table cellspacing="0" id="MainContent_fvGeoExtent" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Geographic Extent</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Extent Name</td><td class="datatext">South Australia</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Min Easting or Longitude</td><td class="datatext">128</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Min Northing or Latitude</td><td class="datatext">-38</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Max Easting or Longitude</td><td class="datatext">141</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Max Northing or Latitude</td><td class="datatext">-26</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+        <table cellspacing="0" id="MainContent_fvDatasetStatus" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Dataset Status</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Initially Acquired</td><td class="datatext">01-JAN-1990</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Last Updated</td><td class="datatext">CURRENT</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Update Frequency</td><td class="datatext">As required</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Maintenance Method</td><td class="datatext">Altered as a result of changes to the underlying cadastre, road centreline or topographical data.
+Altered as a result of the gazette notice that creates new suburbs / localities or altered the boundaries of established suburbs / localities.</td>
+                    </tr>
+
+                    <tr>
+                        <td id="MainContent_fvDatasetStatus_Td2" class="columnlabel"></td>
+			<td class="datatext">Digital data is supplied to clients on request subject to the conditions defined in associated data use agreements. Digital data is provided for non-commercial use at cost of transfer (i.e. to State and Local Government clients).</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">AusGOAL</td><td class="datatext">CC BY    (Attribution)</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+    
+        <h4 id="MainContent_lblAttHeader" class="divider">Attributes</h4>
+
+        <div>
+		<table class="table table-striped" cellspacing="0" rules="all" border="1" id="MainContent_gvAttributes" style="border-collapse:collapse;">
+			<tr>
+				<th scope="col">Table</th><th scope="col">Name</th><th scope="col">Field Alias</th><th scope="col">Data Type</th><th scope="col">Description</th>
+			</tr><tr>
+				<td>Polygon Attribute Table</td><td>SUBURB</td><td>&nbsp;</td><td>Character</td><td>Name of Suburb</td>
+			</tr><tr>
+				<td>Polygon Attribute Table</td><td>SUBURB_NUM</td><td>&nbsp;</td><td>Integer</td><td>Suburb defined as a unique number</td>
+			</tr><tr>
+				<td>Polygon Attribute Table</td><td>POSTCODE</td><td>&nbsp;</td><td>Binary</td><td>Postcode as assigned by Australia Post</td>
+			</tr>
+		</table>
+	</div>
+
+        <table cellspacing="0" id="MainContent_fvContact" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Contact Information</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Organisation</td><td class="datatext">Department of Planning, Transport and Infrastructure<BR>Land Boundaries</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Postal Address</td><td class="datatext">101 Grenfell Street<BR> <BR/> ADELAIDE  <BR/>  5000</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Email</td><td class="datatext">lsgspatialdata@sa.gov.au</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+    
+</div>
+
+    
+
+
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div>&nbsp;</div>
+                          <p>This Metadata document has been delivered by the Location Metadata System (LMS) developed by Location SA.</p>
+                          <p>Retrieved on: Friday, 5 August 2016 </p>
+                          <p>Metadata URL: <a href="http://location.sa.gov.au/LMS/Reports/ReportMetadata.aspx?p_no=754&pu=y">http://location.sa.gov.au/LMS/Reports/ReportMetadata.aspx?p_no=754&pu=y </a></p>
+                          <p>This metadata report is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/au/deed.en" title="Creative Commons License information">Creative Commons Attribution 3.0 Australia Licence</a>  
+                           <img id="ccLogo" src="../Images/icon_commons.png" alt="Creative Commons Licence" />
+								<p>Copyright in this information remains with the Crown in right of the State of South Australia and its licensors including but not limited to the Commonwealth of Australia. Information is not represented to be accurate, current, complete or suitable for any purpose, at the time of its supply and may have changed since the date of supply. No responsibility is accepted for any reliance placed by any person in the use of this information.<br />
+                                   <br />&copy; Copyright 2016 Location SA </p>
+                         </div>
+                    </div>
+                </div>
+            </footer>
+        
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="ABE23021" />
+</div></form>
+        <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+    </body>
+
+</html>

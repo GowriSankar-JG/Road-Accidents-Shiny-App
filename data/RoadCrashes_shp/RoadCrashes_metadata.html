@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head id="Head1"><meta charset="utf-8" /><title>
+	Location Metadata System - Location SA - Public
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <script src="~/Scripts/jquery-1.11.0.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/lms.js" type="text/javascript"></script>
+        <script src="~/Scripts/moment.min.js" type="text/javascript"></script>
+
+
+        <link href="../Content/bootstrap.css" rel="stylesheet" type="text/css" /><link href="../Content/bootstrap-theme.min.css" rel="stylesheet" type="text/css" /><link href="../Content/lms.css" rel="stylesheet" type="text/css" />
+    
+
+        <!--[if lt IE 9]>  
+        <script src="~/Scripts/html5shiv.js"></script>
+        <script src="~/Scripts/respond.min.js"></script>
+        <![endif]-->
+
+       
+</head>
+
+    <body>
+        <form method="post" action="ReportMetadata.aspx" id="frmLMS" role="form">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTQ1OTk5NjE1D2QWAmYPZBYCAgMPZBYEZg8PFgIeC05hdmlnYXRlVXJsBR5odHRwOi8vd3d3LmxvY2F0aW9uLnNhLmdvdi5hdS9kFgJmDw8WBB4ISW1hZ2VVcmwFJ34vSW1hZ2VzL2xvY2F0aW9uIHNhIDIgY29sb3VyX3NtYWxsLnBuZx4NQWx0ZXJuYXRlVGV4dAULTG9jYXRpb24gU0FkZAIBD2QWCAIBDw8WAh4EVGV4dAUUQ3Jhc2hlcyBMYXN0IDUgWWVhcnNkZAIDDzwrABEBARAWABYAFgBkAgUPDxYCHgdWaXNpYmxlZ2QWDgIBDzwrAAoBAA8WBB4LXyFEYXRhQm91bmRnHgtfIUl0ZW1Db3VudAIBZBYCZg9kFgZmDw8WAh8EaGRkAgEPZBYCZg9kFgJmDxUDBDExMjIUQ3Jhc2hlcyBMYXN0IDUgWWVhcnOTAURhdGEgQXV0aG9yaXR5OiBEZXBhcnRtZW50IG9mIFBsYW5uaW5nLCBUcmFuc3BvcnQgYW5kIEluZnJhc3RydWN0dXJlPEJSIC8+RGF0YSBQcm92aWRlcjogRGVwYXJ0bWVudCBvZiBQbGFubmluZywgVHJhbnNwb3J0IGFuZCBJbmZyYXN0cnVjdHVyZTxCUiAvPmQCAg8PFgIfBGhkZAIDDzwrAAoBAA8WBB8FZx8GAgFkFgJmD2QWBmYPDxYCHwRoZGQCAQ9kFgJmD2QWAmYPFQLgAUNyYXNoZXMgZm9yIHRoZSBsYXN0IDUgeWVhcnMgKDIwMTEtMjAxNSkgYXJlIGV4dHJhY3RlZCBmcm9tIHRoZSBUcmFmZmljIEFjY2lkZW50IFJlZ2lzdGVyIChUQVJTKSBmb3IgYW55IGNyYXNoIHdoaWNoIGhhcyBlbm91Z2ggaW5mb3JtYXRpb24gdG8gYmUgbG9jYXRlZC4gIEluZm9ybWF0aW9uIGhhcyBiZWVuIHN1bW1hcml6ZWQgdG8gZW5hYmxlIGRpc3BsYXkgYW5kIHF1ZXJ5IGNyYXNoZXMuE0JsYWNrIFNwb3QgQW5hbHlzaXNkAgIPDxYCHwRoZGQCBQ88KwAKAQAPFgQfBWcfBgIBZBYCZg9kFgZmDw8WAh8EaGRkAgEPZBYCZg9kFgJmDxUDM1JlY29uY2lsZWQgYWdhaW5zdCBUcmFmZmljIEFjY2lkZW50IFJlZ2lzdGVyIChUQVJTKQM5MCUOU2l0ZXMgKy8tIDEwMG1kAgIPDxYCHwRoZGQCBw88KwAKAQAPFgQfBWcfBgIBZBYCZg9kFgZmDw8WAh8EaGRkAgEPZBYCZg9kFgJmDxUFD1NvdXRoIEF1c3RyYWxpYQMxMjgDLTM4AzE0MQMtMjZkAgIPDxYCHwRoZGQCCQ88KwAKAQAPFgQfBWcfBgIBZBYCZg9kFgZmDw8WAh8EaGRkAgEPZBYCZg9kFgRmDxUEB1Vua25vd24EMjAxNQhBbm51YWxseSZBdXRvbWF0ZWQgcHJvY2VzcyB0byByZWZyZXNoIGZyb20gVEFSU2QCAg8VAgAWQ0MgQlkgICAgKEF0dHJpYnV0aW9uKWQCAg8PFgIfBGhkZAINDzwrABECAA8WBB8FZx8GAhpkARAWABYAFgAWAmYPZBY2AgEPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUKVU5JUVVFX0xPQ2RkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFBHRleHRkZAIEDw8WAh8DBV5Db25jYXRlbmF0aW9uIG9mIHRoZSBYIGFuZCBZIGNvLW9yZGluYXRlIGZvciBlYWNoIGNyYXNoIHRvIGdyb3VwIGNyYXNoZXMgYXQgdGhlIHNhbWUgbG9jYXRpb24uZGQCAg9kFgpmDw8WAh8DBRVQb2ludCBBdHRyaWJ1dGUgVGFibGVkZAIBDw8WAh8DBQ1UT1RBTF9DUkFTSEVTZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwUYVG90YWwgbnVtYmVyIG9mIGNyYXNoZXMuZGQCAw9kFgpmDw8WAh8DBRVQb2ludCBBdHRyaWJ1dGUgVGFibGVkZAIBDw8WAh8DBQdDU0VfUERPZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwW6AVRvdGFsIG51bWJlciBvZiBQcm9wZXJ0eSBEYW1hZ2UgQ3Jhc2hlcy4gIFJlcG9ydGVkIHByb3BlcnR5IGRhbWFnZSBvZiBncmVhdGVyIHRoYW4gJDUwMDAgb3IgYSBWZWhpY2xlIHdhcyB0b3dlZCBhd2F5IG9yIHRoZSBjcmFzaCBpbnZvbHZlZCBhIG1vdG9yIGN5Y2xlLCB3aGVlbCBjaGFpciwgc2Nvb3RlciBvciBiaWN5Y2xlLmRkAgQPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUHQ1NFX0lOSmRkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFDExvbmcgSW50ZWdlcmRkAgQPDxYCHwMFIVRvdGFsIG51bWJlciBvZiBJbmp1cnkgQ3Jhc2hlcy4gIGRkAgUPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUHQ1NFX0ZBVGRkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFDExvbmcgSW50ZWdlcmRkAgQPDxYCHwMFHVRvdGFsIG51bWJlciBvZiBGYXRhbCBDcmFzaGVzZGQCBg9kFgpmDw8WAh8DBRVQb2ludCBBdHRyaWJ1dGUgVGFibGVkZAIBDw8WAh8DBQZDU0VfU0lkZAICDw8WAh8DBQYmbmJzcDtkZAIDDw8WAh8DBQxMb25nIEludGVnZXJkZAIEDw8WAh8DBVBUb3RhbCBudW1iZXIgb2YgU2VyaW91cyBJbmp1cnkgQ3Jhc2hlcywgdGhpcyB0b3RhbCBpcyBhIHN1YnNldCBvZiBJbmp1cnkgQ3Jhc2hlc2RkAgcPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUQVE9UQUxfQ0FTVUFMVElFU2RkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFDExvbmcgSW50ZWdlcmRkAgQPDxYCHwMFSlRvdGFsIG51bWJlciBvZiBpbmp1cmVkIHBhcnRpZXMgaW52b2x2ZWQgaW4gdGhlIGNyYXNoIGluY2x1ZGluZyBmYXRhbGl0aWVzZGQCCA9kFgpmDw8WAh8DBRVQb2ludCBBdHRyaWJ1dGUgVGFibGVkZAIBDw8WAh8DBRBUT1RBTF9GQVRBTElUSUVTZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwVcVG90YWwgbnVtYmVyIG9mIGZhdGFsaXRpZXMgaW52b2x2ZWQgaW4gdGhlIGNyYXNoLiBEZWF0aCBvY2N1cnJlZCB3aXRoaW4gMzAgZGF5cyBvZiB0aGUgY3Jhc2hkZAIJD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFFFRPVEFMX1NFUklPVVNfSU5KVVJZZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwVKVG90YWwgbnVtYmVyIG9mIGluanVyZWQgcGFydGllcyBhZG1pdHRlZCB0byBob3NwaXRhbCBpbnZvbHZlZCBpbiB0aGUgY3Jhc2hkZAIKD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFDENUWV9SRUFSX0VORGRkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFDExvbmcgSW50ZWdlcmRkAgQPDxYCHwMFvAFUb3RhbCBudW1iZXIgb2YgY3Jhc2hlcyB3aGVyZSB0aGUgbW92ZW1lbnQgbGVhZGluZyB1cCB0byB0aGUgY3Jhc2ggd2FzIGNsYXNzZWQgYXMgYSBSZWFyIEVuZCBjb2xsaXNpb24uICBCb3RoIHZlaGljbGVzIGFyZSB0cmF2ZWxsaW5nIGluIHRoZSBzYW1lIGRpcmVjdCwgd2l0aCBvbmUgdmVoaWNsZSBiZWhpbmQgdGhlIG90aGVyLmRkAgsPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUUQ1RZX0hJVF9GSVhFRF9PQkpFQ1RkZAICDw8WAh8DBQYmbmJzcDtkZAIDDw8WAh8DBQxMb25nIEludGVnZXJkZAIEDw8WAh8DBaUBVG90YWwgbnVtYmVyIG9mIGNyYXNoZXMgd2hlcmUgdGhlIG1vdmVtZW50IGxlYWRpbmcgdXAgdG8gdGhlIGNyYXNoIHdhcyBjbGFzc2VkIGFzIGhpdHRpbmcgYSBmaXhlZCBvYmplY3QsIGVnIHN0b2JpZSBvciBsaWdodCBwb2xlLCB0cmVlLCBzaWduIHBvc3RzLCB0cmFmZmljIHNpZ25hbC4gZGQCDA9kFgpmDw8WAh8DBRVQb2ludCBBdHRyaWJ1dGUgVGFibGVkZAIBDw8WAh8DBQ5DVFlfU0lERV9TV0lQRWRkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFDExvbmcgSW50ZWdlcmRkAgQPDxYCHwMFvwFUb3RhbCBudW1iZXIgb2YgY3Jhc2hlcyB3aGVyZSB0aGUgbW92ZW1lbnQgbGVhZGluZyB1cCB0byB0aGUgY3Jhc2ggd2FzIGNsYXNzZWQgYXMgYSBzaWRlIHN3aXBlLCBib3RoIHZlaGljbGVzIHRyYXZlbGxpbmcgc2lkZSBieSBzaWRlIGluIHRoZSBzYW1lIGRpcmVjdGlvbiBvbiB0aGUgc2FtZSByb2FkLCBjYXJyaWFnZXdheS9sYW5lLmRkAg0PZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUPQ1RZX1JJR0hUX0FOR0xFZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwWyAVRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoZXJlIHRoZSBtb3ZlbWVudCBsZWFkaW5nIHVwIHRvIHRoZSBjcmFzaCB3YXMgY2xhc3NlZCBhcyBhIHJpZ2h0IGFuZ2xlIGNvbGxpc2lvbi4gQm90aCB2ZWhpY2xlcyB3ZXJlIHRyYXZlbGxpbmcgb24gZGlmZmVyZW50IHJvYWRzIG9yIGV4aXRpbmcgYSBkcml2ZXdheS5kZAIOD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFC0NUWV9IRUFEX09OZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwWrAVRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoZXJlIHRoZSBtb3ZlbWVudCBsZWFkaW5nIHVwIHRvIHRoZSBjcmFzaCB3YXMgY2xhc3NlZCBhcyBjb2xsaWRpbmcgaGVhZCBvbi4gIEJvdGggdmVoaWNsZXMgYXJlIHRyYXZlbGxpbmcgaW4gb3Bwb3NpbmcgZGlyZWN0aW9ucyBvbiB0aGUgc2FtZSByb2FkLmRkAg8PZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUSQ1RZX0hJVF9QRURFU1RSSUFOZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwXeAlRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoZXJlIHRoZSBtb3ZlbWVudCBsZWFkaW5nIHVwIHRvIHRoZSBjcmFzaCB3YXMgY2xhc3NlZCBhcyBoaXR0aW5nIGEgcGVkZXN0cmlhbi4gIFRoZXJlIG11c3QgaGF2ZSBiZWVuIGEgcGVkZXN0cmlhbiBpbnZvbHZlZCBpbiB0aGUgY3Jhc2gsIHBlZGVzdHJpYW5zIGluY2x1ZGUgd2hlZWxjaGFpcnMsIGVsZWN0cmljIHdoZWVsY2hhaXJzL2dvcGhlcnMuIA0KTkIgLSBJZiBhIHZlaGljbGUgY29sbGlkZXMgd2l0aCBhbm90aGVyIHZlaGljbGUgdGhlbiBhIHBlZGVzdHJpYW4gdGhpcyBpbmNpZGVudCBpcyBub3QgY2xhc3NlZCBhcyBhIEhpdCBQZWRlc3RyaWFuIENyYXNoLg0KZGQCEA9kFgpmDw8WAh8DBRVQb2ludCBBdHRyaWJ1dGUgVGFibGVkZAIBDw8WAh8DBQ1DVFlfUk9MTF9PVkVSZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwXXAlRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoZXJlIHRoZSBtb3ZlbWVudCBsZWFkaW5nIHVwIHRvIHRoZSBjcmFzaCB3YXMgY2xhc3NlZCBhcyBhIHJvbGwgb3Zlci4gIFRoZSB2ZWhpY2xlIGxvc3QgY29udHJvbCB0aGVuIHN1YnNlcXVlbnRseSByb2xscyBiZWZvcmUgaGl0dGluZyBhbnkgb3RoZXIgb2JqZWN0IG9yIG5vIG9iamVjdCBhdCBhbGwuDQpOQiAmIzE5MTsgSWYgdGhlIHZlaGljbGUgY29sbGlkZWQgd2l0aCBhbiBvYmplY3Qgb3Igb3RoZXIgdmVoaWNsZSB0aGVuIHJvbGxlZCwgdGhlIGNyYXNoIHR5cGUgaXMgYXQgdGhlIGZpcnN0IHBvaW50IG9mIGltcGFjdCBub3QgYSByb2xsIG92ZXIuDQpkZAIRD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFDkNUWV9SSUdIVF9UVVJOZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwWJAlRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoZXJlIHRoZSBtb3ZlbWVudCBsZWFkaW5nIHVwIHRvIHRoZSBjcmFzaCB3YXMgY2xhc3NlZCBhcyBhIHJpZ2h0IHR1cm4gY29sbGlzaW9uLiBCb3RoIHZlaGljbGVzIHdlcmUgdHJhdmVsbGluZyBvbiB0aGUgc2FtZSByb2FkIGluIG9wcG9zaW5nIGRpcmVjdGlvbnMsIG9uZSB2ZWhpY2xlIHdhcyB0cmF2ZWxsaW5nIHN0cmFpZ2h0IGFoZWFkIGFuZCB0aGUgb3RoZXIgZXhlY3V0ZWQgYSByaWdodCB0dXJuIG9yIFUtdHVybi5kZAISD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFFkNUWV9ISVRfUEFSS0VEX1ZFSElDTEVkZAICDw8WAh8DBQYmbmJzcDtkZAIDDw8WAh8DBQxMb25nIEludGVnZXJkZAIEDw8WAh8DBYcCVG90YWwgbnVtYmVyIG9mIGNyYXNoZXMgd2hlcmUgdGhlIG1vdmVtZW50IGxlYWRpbmcgdXAgdG8gdGhlIGNyYXNoIHdhcyBjbGFzc2VkIGFzIGNvbGxpZGluZyB3aXRoIGEgcGFya2VkIHZlaGljbGUuIFRoZSBwYXJrZWQgdmVoaWNsZSBtdXN0IGhhdmUgdGhlIG1vdG9yIHN3aXRjaGVkIG9mZiBhbmQgdGhlIHZlaGljbGUgbWF5IGhhdmUgYmUgYXR0ZW5kZWQgYnkgdGhlIGRyaXZlciBvciBhIHBhc3NlbmdlciBvciB0aGUgdmVoaWNsZSB3YXMgdW5hdHRlbmRlZC5kZAITD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFDkNUWV9ISVRfQU5JTUFMZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwWJAlRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoZXJlIHRoZSBtb3ZlbWVudCBsZWFkaW5nIHVwIHRvIHRoZSBjcmFzaCB3YXMgY2xhc3NlZCBhcyBoaXR0aW5nIGFuZCBhbmltYWwsIHdoZXRoZXIgdGhlIGFuaW1hbCB3YXMgd2lsZCBvciBkb21lc3RpYyAobm90IHJpZGRlbikuDQpOQiAmIzE5MTsgSWYgdGhlIHZlaGljbGUgc3dlcnZlcyB0byBhdm9pZCBhbiBhbmltYWwgYW5kIGhpdHMgYW5vdGhlciBvYmplY3QgdGhpcyBpcyBub3QgYSBIaXQgQW5pbWFsIGNyYXNoDQpkZAIUD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFFkNUWV9ISVRfT0JKRUNUX09OX1JPQURkZAICDw8WAh8DBQYmbmJzcDtkZAIDDw8WAh8DBQxMb25nIEludGVnZXJkZAIEDw8WAh8DBdMBVG90YWwgbnVtYmVyIG9mIGNyYXNoZXMgd2hlcmUgdGhlIG1vdmVtZW50IGxlYWRpbmcgdXAgdG8gdGhlIGNyYXNoIHdhcyBjbGFzc2VkIGFzIGhpdHRpbmcgYW4gb24gdGhlIHJvYWQgd2hpY2ggaXMgbm90IGNsYXNzZWQgYXMgYSBmaXhlZCBlZyBjcmF0ZSwgdHJlZSBsaW1iLCBzb21ldGhpbmcgd2hpY2ggbWF5IGhhdmUgZmFsbGVuIGZyb20gYW5vdGhlciB2ZWhpY2xlLmRkAhUPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUQQ1RZX0xFRlRfUk9BRF9PQ2RkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFDExvbmcgSW50ZWdlcmRkAgQPDxYCHwMF8gFUb3RhbCBudW1iZXIgb2YgY3Jhc2hlcyB3aGVyZSB0aGUgbW92ZW1lbnQgbGVhZGluZyB1cCB0byB0aGUgY3Jhc2ggd2hlcmUgdGhlIHZlaGljbGUgbG9zdCBjb250cm9sIGFuZCBsZWZ0IHRoZSByb2FkIGFuZCBjYXVzZWQgZGFtYWdlIGVnIHRoZSB2ZWhpY2xlIGxlZnQgdGhlIHJvYWQgb3V0IG9mIGNvbnRyb2wgYW5kIGNhbWUgdG8gcmVzdCBpbiBhIGRpdGNoIHdpdGhvdXQgaGl0dGluZyBhbnl0aGluZyBvciByb2xsaW5nLmRkAhYPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUJQ1RZX09USEVSZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwV6VG90YWwgbnVtYmVyIG9mIGNyYXNoZXMgd2hlcmUgdGhlIG1vdmVtZW50IGxlYWRpbmcgdXAgdG8gdGhlIGNyYXNoIGNvdWxkIG5vdCBiZSBjbGFzc2lmaWVkIGluIGFueSBvZiB0aGUgYWJvdmUgY2F0ZWdvcmllcy5kZAIXD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFC0NUWV9VTktOT1dOZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwUJTm90IENvZGVkZGQCGA9kFgpmDw8WAh8DBRVQb2ludCBBdHRyaWJ1dGUgVGFibGVkZAIBDw8WAh8DBQtVVFlfQklDWUNMRWRkAgIPDxYCHwMFBiZuYnNwO2RkAgMPDxYCHwMFDExvbmcgSW50ZWdlcmRkAgQPDxYCHwMFUlRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoZXJlIG9uZSBvZiB0aGUgdW5pdHMgaW52b2x2ZWQgaW4gdGhlIGNyYXNoIHdhcyBhIGJpY3ljbGVkZAIZD2QWCmYPDxYCHwMFFVBvaW50IEF0dHJpYnV0ZSBUYWJsZWRkAgEPDxYCHwMFDlVUSV9QRURFU1RSSUFOZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwVVVG90YWwgbnVtYmVyIG9mIGNyYXNoZXMgd2hlcmUgb25lIG9mIHRoZSB1bml0cyBpbnZvbHZlZCBpbiB0aGUgY3Jhc2ggd2FzIGEgUGVkZXN0cmlhbmRkAhoPZBYKZg8PFgIfAwUVUG9pbnQgQXR0cmlidXRlIFRhYmxlZGQCAQ8PFgIfAwUJTENPX05JR0hUZGQCAg8PFgIfAwUGJm5ic3A7ZGQCAw8PFgIfAwUMTG9uZyBJbnRlZ2VyZGQCBA8PFgIfAwWyAVRvdGFsIG51bWJlciBvZiBjcmFzaGVzIHdoaWNoIG9jY3VycmVkIGF0IG5pZ2h0IGFzIGRlZmluZWQgYnkgdGhlIHN1bnJpc2UgYW5kIHN1bnNldCB0YWJsZXMgcHVibGlzaGVkIGJ5IHRoZSBCdXJlYXUgb2YgTWV0ZW9yb2xvZ3kgZm9yIFNBIGZvciB0aGUgZGF5IG1vbnRoIGFuZCB5ZWFyIG9mIHRoZSBjcmFzaC5kZAIbDw8WAh8EaGRkAg8PPCsACgEADxYEHwVnHwYCAWQWAmYPZBYGZg8PFgIfBGhkZAIBD2QWAmYPZBYCZg8VBVNEZXBhcnRtZW50IG9mIFBsYW5uaW5nLCBUcmFuc3BvcnQgYW5kIEluZnJhc3RydWN0dXJlPEJSPlNhZmV0eSBhbmQgU2VydmljZSBEaXZpc2lvbhBHUE8gQm94IDE1MzM8QlI+CEFERUxBSURFBSA1MDAxGGRwdGkuZ2lzb2ZmaWNlQHNhLmdvdi5hdWQCAg8PFgIfBGhkZAIHDw8WAh8EaGQWGgIBDzwrAAoAZAIDDzwrAAoAZAIFDzwrAAoAZAIHDzwrAAoAZAIJDzwrAAoAZAILDzwrAAoAZAIPDzwrABEBARAWABYAFgBkAhMPPCsAEQEBEBYAFgAWAGQCFQ88KwAKAGQCFw88KwAKAGQCGQ88KwAKAGQCHQ88KwARAQEQFgAWABYAZAIfDzwrAAoAZBgVBSBjdGwwMCRNYWluQ29udGVudCRmdkRlc2NyaXB0aW9uMg9nZAUcY3RsMDAkTWFpbkNvbnRlbnQkZnZDaXRhdGlvbg8UKwAHZGRkZGQWAAIBZAUbY3RsMDAkTWFpbkNvbnRlbnQkZnZRdWFsaXR5DxQrAAdkZGRkZBYAAgFkBRtjdGwwMCRNYWluQ29udGVudCRndkRhdE5vdGUPZ2QFHWN0bDAwJE1haW5Db250ZW50JGZ2R2VvRXh0ZW50DxQrAAdkZGRkZBYAAgFkBR5jdGwwMCRNYWluQ29udGVudCRndkF0dHJpYnV0ZXMPPCsADAEIAgFkBSVjdGwwMCRNYWluQ29udGVudCRmdlNlY3VyaXR5TGljZW5zaW5nD2dkBR9jdGwwMCRNYWluQ29udGVudCRndkRhdGFzZXRMaXN0D2dkBRpjdGwwMCRNYWluQ29udGVudCRmdkV4dGVudA9nZAUaY3RsMDAkTWFpbkNvbnRlbnQkZ3ZUYWJsZXMPZ2QFH2N0bDAwJE1haW5Db250ZW50JGZ2RGVzY3JpcHRpb24PFCsAB2RkZGRkFgACAWQFG2N0bDAwJE1haW5Db250ZW50JGZ2RGF0YXNldA9nZAUgY3RsMDAkTWFpbkNvbnRlbnQkZnZEYXRhUHJvdmlkZXIPZ2QFGmN0bDAwJE1haW5Db250ZW50JGZ2U3RhdHVzD2dkBSFjdGwwMCRNYWluQ29udGVudCRmdkRhdGFBdXRob3JpdHkPZ2QFGmN0bDAwJE1haW5Db250ZW50JGd2RmllbGRzD2dkBRtjdGwwMCRNYWluQ29udGVudCRmdkNvbnRhY3QPFCsAB2RkZGRkFgACAWQFIWN0bDAwJE1haW5Db250ZW50JGZ2RGF0YXNldFN0YXR1cw8UKwAHZGRkZGQWAAIBZAUkY3RsMDAkTWFpbkNvbnRlbnQkZnZSZWxhdGVkUHJvZHVjdHMyD2dkBSZjdGwwMCRNYWluQ29udGVudCRmdkpvaW50RGF0YUF1dGhvcml0eQ9nZAUjY3RsMDAkTWFpbkNvbnRlbnQkZnZSZWxhdGVkUHJvZHVjdHMPZ2Th+PXIEiCjU3uwc5h8k57uAsP1zg==" />
+</div>
+
+            <header>
+                <div class="container">
+                    
+                    <div class="row">
+                        <div id="dpti-lms-head-container" class="small col-sm-12">
+                            <div id="logo">
+                                <a id="linkLogoURL" href="http://www.location.sa.gov.au/"><img id="imgReportLogo" src="../Images/location%20sa%202%20colour_small.png" alt="Location SA" /></a>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container">        
+               
+
+    <h3><span id="MainContent_lblDatasetName">Crashes Last 5 Years</span></h3>
+
+    <div>
+
+</div>
+
+    <div id="MainContent_pnlPublic">
+	
+
+        <table cellspacing="0" id="MainContent_fvCitation" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+
+                <table>
+                    <tr>
+                        <td class="columnlabel">Dataset Number</td><td class="datatext">1122</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Dataset Title</td><td class="datatext">Crashes Last 5 Years</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Custodian</td><td class="datatext">Data Authority: Department of Planning, Transport and Infrastructure<BR />Data Provider: Department of Planning, Transport and Infrastructure<BR /></td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+
+
+        <table cellspacing="0" id="MainContent_fvDescription" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Description</h4>
+                <table> 
+                    <tr>
+                        <td class="columnlabel">Description</td><td class="datatext">Crashes for the last 5 years (2011-2015) are extracted from the Traffic Accident Register (TARS) for any crash which has enough information to be located.  Information has been summarized to enable display and query crashes.</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Usage</td><td class="datatext">Black Spot Analysis</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+        <table cellspacing="0" id="MainContent_fvQuality" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Data Quality</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Lineage</td><td class="datatext">Reconciled against Traffic Accident Register (TARS)</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Completeness</td><td class="datatext">90%</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Positional Accuracy</td><td class="datatext">Sites +/- 100m</td>
+                    </tr>
+
+                </table>
+            </td>
+		</tr>
+	</table>
+
+        <table cellspacing="0" id="MainContent_fvGeoExtent" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Geographic Extent</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Extent Name</td><td class="datatext">South Australia</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Min Easting or Longitude</td><td class="datatext">128</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Min Northing or Latitude</td><td class="datatext">-38</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Max Easting or Longitude</td><td class="datatext">141</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Max Northing or Latitude</td><td class="datatext">-26</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+        <table cellspacing="0" id="MainContent_fvDatasetStatus" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Dataset Status</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Initially Acquired</td><td class="datatext">Unknown</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Last Updated</td><td class="datatext">2015</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Update Frequency</td><td class="datatext">Annually</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Maintenance Method</td><td class="datatext">Automated process to refresh from TARS</td>
+                    </tr>
+
+                    <tr>
+                        <td id="MainContent_fvDatasetStatus_Td2" class="columnlabel"></td>
+			<td class="datatext"></td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">AusGOAL</td><td class="datatext">CC BY    (Attribution)</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+    
+        <h4 id="MainContent_lblAttHeader" class="divider">Attributes</h4>
+
+        <div>
+		<table class="table table-striped" cellspacing="0" rules="all" border="1" id="MainContent_gvAttributes" style="border-collapse:collapse;">
+			<tr>
+				<th scope="col">Table</th><th scope="col">Name</th><th scope="col">Field Alias</th><th scope="col">Data Type</th><th scope="col">Description</th>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>UNIQUE_LOC</td><td>&nbsp;</td><td>text</td><td>Concatenation of the X and Y co-ordinate for each crash to group crashes at the same location.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>TOTAL_CRASHES</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CSE_PDO</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of Property Damage Crashes.  Reported property damage of greater than $5000 or a Vehicle was towed away or the crash involved a motor cycle, wheel chair, scooter or bicycle.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CSE_INJ</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of Injury Crashes.  </td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CSE_FAT</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of Fatal Crashes</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CSE_SI</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of Serious Injury Crashes, this total is a subset of Injury Crashes</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>TOTAL_CASUALTIES</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of injured parties involved in the crash including fatalities</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>TOTAL_FATALITIES</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of fatalities involved in the crash. Death occurred within 30 days of the crash</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>TOTAL_SERIOUS_INJURY</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of injured parties admitted to hospital involved in the crash</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_REAR_END</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as a Rear End collision.  Both vehicles are travelling in the same direct, with one vehicle behind the other.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_HIT_FIXED_OBJECT</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as hitting a fixed object, eg stobie or light pole, tree, sign posts, traffic signal. </td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_SIDE_SWIPE</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as a side swipe, both vehicles travelling side by side in the same direction on the same road, carriageway/lane.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_RIGHT_ANGLE</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as a right angle collision. Both vehicles were travelling on different roads or exiting a driveway.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_HEAD_ON</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as colliding head on.  Both vehicles are travelling in opposing directions on the same road.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_HIT_PEDESTRIAN</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as hitting a pedestrian.  There must have been a pedestrian involved in the crash, pedestrians include wheelchairs, electric wheelchairs/gophers. 
+NB - If a vehicle collides with another vehicle then a pedestrian this incident is not classed as a Hit Pedestrian Crash.
+</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_ROLL_OVER</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as a roll over.  The vehicle lost control then subsequently rolls before hitting any other object or no object at all.
+NB &#191; If the vehicle collided with an object or other vehicle then rolled, the crash type is at the first point of impact not a roll over.
+</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_RIGHT_TURN</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as a right turn collision. Both vehicles were travelling on the same road in opposing directions, one vehicle was travelling straight ahead and the other executed a right turn or U-turn.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_HIT_PARKED_VEHICLE</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as colliding with a parked vehicle. The parked vehicle must have the motor switched off and the vehicle may have be attended by the driver or a passenger or the vehicle was unattended.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_HIT_ANIMAL</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as hitting and animal, whether the animal was wild or domestic (not ridden).
+NB &#191; If the vehicle swerves to avoid an animal and hits another object this is not a Hit Animal crash
+</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_HIT_OBJECT_ON_ROAD</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash was classed as hitting an on the road which is not classed as a fixed eg crate, tree limb, something which may have fallen from another vehicle.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_LEFT_ROAD_OC</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash where the vehicle lost control and left the road and caused damage eg the vehicle left the road out of control and came to rest in a ditch without hitting anything or rolling.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_OTHER</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where the movement leading up to the crash could not be classified in any of the above categories.</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>CTY_UNKNOWN</td><td>&nbsp;</td><td>Long Integer</td><td>Not Coded</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>UTY_BICYCLE</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where one of the units involved in the crash was a bicycle</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>UTI_PEDESTRIAN</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes where one of the units involved in the crash was a Pedestrian</td>
+			</tr><tr>
+				<td>Point Attribute Table</td><td>LCO_NIGHT</td><td>&nbsp;</td><td>Long Integer</td><td>Total number of crashes which occurred at night as defined by the sunrise and sunset tables published by the Bureau of Meteorology for SA for the day month and year of the crash.</td>
+			</tr>
+		</table>
+	</div>
+
+        <table cellspacing="0" id="MainContent_fvContact" style="border-collapse:collapse;">
+		<tr>
+			<td colspan="2">
+                <h4 class="divider">Contact Information</h4>
+                <table>
+                    <tr>
+                        <td class="columnlabel">Organisation</td><td class="datatext">Department of Planning, Transport and Infrastructure<BR>Safety and Service Division</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Postal Address</td><td class="datatext">GPO Box 1533<BR> <BR/> ADELAIDE  <BR/>  5001</td>
+                    </tr>
+                    <tr>
+                        <td class="columnlabel">Email</td><td class="datatext">dpti.gisoffice@sa.gov.au</td>
+                    </tr>
+                </table>
+            </td>
+		</tr>
+	</table>
+
+    
+</div>
+
+    
+
+
+            </div>
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div>&nbsp;</div>
+                          <p>This Metadata document has been delivered by the Location Metadata System (LMS) developed by Location SA.</p>
+                          <p>Retrieved on: Friday, 22 July 2016 </p>
+                          <p>Metadata URL: <a href="http://location.sa.gov.au/LMS/Reports/ReportMetadata.aspx?p_no=1122&pu=y">http://location.sa.gov.au/LMS/Reports/ReportMetadata.aspx?p_no=1122&pu=y </a></p>
+                          <p>This metadata report is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/au/deed.en" title="Creative Commons License information">Creative Commons Attribution 3.0 Australia Licence</a>  
+                           <img id="ccLogo" src="../Images/icon_commons.png" alt="Creative Commons Licence" />
+								<p>Copyright in this information remains with the Crown in right of the State of South Australia and its licensors including but not limited to the Commonwealth of Australia. Information is not represented to be accurate, current, complete or suitable for any purpose, at the time of its supply and may have changed since the date of supply. No responsibility is accepted for any reliance placed by any person in the use of this information.<br />
+                                   <br />&copy; Copyright 2016 Location SA </p>
+                         </div>
+                    </div>
+                </div>
+            </footer>
+        
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="ABE23021" />
+</div></form>
+        <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
+    </body>
+
+</html>
